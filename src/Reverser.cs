@@ -1,10 +1,12 @@
 public static class Reverser{
     public static string Reverse(string s){
         var r = s.ToCharArray();
-        var result = "";
-        for(var i = r.Length -1; i > -1; i--){
-            result += r[i];
+        char swap;
+        for(var i = 0; i < r.Length / 2; i++){
+            swap = r[i];
+            r[i] = r[r.Length -1 -i];
+            r[r.Length -1 -i] = swap;
         }
-        return result;
+        return new string(r);
     }
 }
