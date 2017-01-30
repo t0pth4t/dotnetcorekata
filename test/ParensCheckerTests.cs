@@ -13,6 +13,8 @@ namespace Tests
         [InlineData("()()", true)]
         [InlineData("(())", true)]
         [InlineData("())", false)]
+        [InlineData("(]", false)]
+        [InlineData("([])", true)]
         public void IsBalanced__GivenString__ReturnsIsBalanced(string s, bool expected) 
         {
             var result = ParensChecker.IsBalanced(s);
